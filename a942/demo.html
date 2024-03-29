@@ -1,0 +1,91 @@
+<form id="question-1">
+    <p>Question one...</p>
+    <input class="yes" id="yes1" name="test" type="radio" /> Yes
+    <input class="no"  id="no1" name="test" type="radio" />No
+    <input class="un"  id="un1" name="test" type="radio" />Unsure
+</form>
+<form id="question-2">
+    <p>Question two...</p>
+    <input class="yes"  id="yes2" name="test" type="radio" /> Yes
+    <input class="no"  id="no2"  name="test" type="radio" />No
+    <input class="un"  id="un2" name="test" type="radio" />Unsure
+</form>
+<form id="question-3">
+    <p>Question three...</p>
+    <input class="yes"  id="yes3" name="test" type="radio" /> Yes
+    <input class="no"  id="no3"  name="test" type="radio" />No
+    <input class="un"  id="un3" name="test" type="radio" />Unsure
+</form>
+<div id="show-me-1" style="display:none; box-sizing: border-box; padding: 20px; background-color: #efefef;">Show this if all answers are 'Yes'</div>
+<div id="show-me-2" style="display:none; box-sizing: border-box; padding: 20px; background-color: #efefef;">Show this if all answers are a combination of 'Yes' 'No' and 'Unsure'</div>
+<div id="show-me-3" style="display:none; box-sizing: border-box; padding: 20px; background-color: #efefef;">Show this if all answers are 'No'</div>
+
+<script>
+    $(document).ready(function() {
+        $('#show-me-1').hide();
+        $('#show-me-2').hide();
+        $('#show-me-3').hide();
+
+
+        $('input[type="radio"]').click(function() {
+
+            if ($('#yes1').is(":checked"))
+            {
+                if ($('#yes2').is(":checked"))
+                {
+                    if ($('#yes3').is(":checked"))
+                    {
+                        $('#show-me-1').show();
+                        $('#show-me-2').hide();
+                        $('#show-me-3').hide();
+                    }else{
+                        $('#show-me-1').hide();
+                    }
+                }else{
+                    $('#show-me-1').hide();
+                }
+            }else{
+                $('#show-me-1').hide();
+            }
+
+            if ($('#no1').is(":checked"))
+            {
+                if ($('#no2').is(":checked"))
+                {
+                    if ($('#no3').is(":checked"))
+                    {
+                        $('#show-me-3').show();
+                        $('#show-me-1').hide();
+                        $('#show-me-2').hide();
+                    }else{
+                        $('#show-me-3').hide();
+                    }
+                }else{
+                    $('#show-me-3').hide();
+                }
+            }else{
+                $('#show-me-3').hide();
+            }
+
+            if ($('.yes').is(":checked"))
+            {
+                if ($('.no').is(":checked"))
+                {
+                    if ($('.un').is(":checked"))
+                    {
+                        $('#show-me-2').show();
+                        $('#show-me-1').hide();
+                        $('#show-me-3').hide();
+                    }else{
+                        $('#show-me-2').hide();
+                    }
+                }else{
+                    $('#show-me-2').hide();
+                }
+            }else{
+                $('#show-me-2').hide();
+            }
+
+        });
+    });
+</script>

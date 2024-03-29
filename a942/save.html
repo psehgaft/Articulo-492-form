@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<head> 
+    <meta charset="utf-8">
+    <title>jQuery UI Sortable - Default functionality</title>
+
+    <link rel="stylesheet" href="http://jqueryui.com/themes/base/jquery.ui.all.css">
+    <script src="http://jqueryui.com//jquery-1.7.2.js"></script>
+    <script src="http://jqueryui.com/ui/jquery.ui.core.js"></script>
+    <script src="http://jqueryui.com/ui/jquery.ui.widget.js"></script>
+    <script src="http://jqueryui.com/ui/jquery.ui.mouse.js"></script>
+    <script src="http://jqueryui.com/ui/jquery.ui.sortable.js"></script>
+        <script src="http://jqueryui.com/ui/jquery.ui.accordion.js"></script>
+    <link rel="stylesheet" href="http://jqueryui.com/demos/demos.css">        
+    <meta charset="utf-8">
+    <style>a { font: 12px Arial; color: #ac9095; }</style>
+<script type='text/javascript'>
+$(document).ready(function() {
+var f = $('form'), a = $('a'),
+    i = $('input'), t = $('textarea');
+       
+$('#salva').click(function() {
+    var o = {}, v = t.val();
+    
+    a.hide();//nasconde il contenuto
+    i.each(function() { 
+    o[this.name] = $(this).val(); });
+    if (v === '') {
+        t.val("[\n " + JSON.stringify(o) + " \n]")         
+    }
+    else {
+        t.val(v.substr(0, v.length - 3));
+        t.val(t.val() + ",\n " + JSON.stringify(o) +  " \n]")  
+    }
+});
+});
+
+$('#esporta').bind('click', function() {
+    a.attr('href', 'data:application/x-json;base64,' + btoa(t.val())).show();
+        
+});
+</script>
+</head>
+<body>
+    <form>
+        <label>Nome</label> <input type="text" name="nome"><br />
+        <label>Cognome</label> <input type="text" name="cognome">
+        <button type="button" id="salva">Salva</button>
+    </form>        
+
+    <textarea rows="10" cols="60"></textarea><br />
+    <button type="button" id="esporta">Esporta dati</button>
+    <a href="" style="display: none">Scarica Dati</a>
+</body>
+</html>

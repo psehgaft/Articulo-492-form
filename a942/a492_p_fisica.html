@@ -1,0 +1,140 @@
+<!-- Copyright 2018 Google LLC.
+     SPDX-License-Identifier: Apache-2.0 -->
+     <!DOCTYPE html>
+     <html lang="en">
+       <head>
+         <title>Selecciona los archivos</title>
+         <link rel="shortcut icon" 
+               href="https://cdn.glitch.com/9b775a52-d700-4208-84e9-18578ee75266%2Ficon.jpeg?v=1585082912878">
+         <meta charset="utf-8">
+         <meta http-equiv="X-UA-Compatible" content="IE=edge">
+         <meta name="viewport" content="width=device-width, initial-scale=1">
+         <link rel="stylesheet" href="/styles.css">
+       </head>
+       <body>
+         <h1>
+            Selecciona los archivos para persona fisica
+         </h1>
+         <input type="file" id="file-selector" multiple/>
+         <ul id="output"></ul>
+         <html>
+  <head>
+    <!--
+      required viewer styles
+    -->
+    <style>
+      #form {
+        max-width: 800px;
+      }
+    </style>
+
+    <title>Gestor de carpetas clientes</title>
+  </head>
+
+  <body>
+    <div id="form_a_942"></div>
+
+    <!--
+      add your form schema to this script tag
+      alternatively, load it asynchronously from anywhere
+    -->
+      <form id="form_a_942">
+        <div id="questions_wrapper">
+            <p><h1>Administracion de carpetas Articulo 942</h1></p>
+            <div>
+                <label for="nombre_carpeta">¿Tipo de cliente?</label>
+                </p>
+                <input type="radio" name="radio" value="persona_fisica" id="persona_fisica">
+                <label for="a_0">Persona Fisica</label>
+                <input type="radio"  name="radio" value="persona_moral" id="persona_moral">
+                <label for="a_1">Persona Moral</label>
+            </div>
+            <p></p>
+            <div>
+              <label for="nombre_carpeta">Nombre del archivo</label>
+              <input type="text" id="nombre_carpeta" placeholder="Jaque Salinas" />
+            </div>
+            <div class="question range">
+                <label for="a_13">A?</label>
+                <input type="range"  name="range" id="a_13" min="0" max="10" step="1" list="q_3_dl">
+                <datalist id="q_3_dl">
+                    <option value="0"></option>
+                    <option value="1"></option>
+                    <option value="2"></option>
+                    <option value="3"></option>
+                    <option value="4"></option>
+                    <option value="5"></option>
+                    <option value="6"></option>
+                    <option value="7"></option>
+                    <option value="8"></option>
+                    <option value="9"></option>
+                    <option value="10"></option>
+                </datalist>
+            </div>
+    
+            
+            <p>Single checkbox (Unique name per checkbox)</p>
+            <div>
+                <input type="checkbox" name="single-checkbox" value="A" id="as_14">
+                <label for="as_14">A</label>
+            </div>
+            
+            
+            <p>Text</p>
+            <input name ="input" type="text" value="">
+            <p>Select multiple</p>
+            <select name="select" multiple>
+                <option value="volvo">Volvo</option>
+                <option value="saab">Saab</option>
+                <option value="mercedes">Mercedes</option>
+                <option value="audi">Audi</option>
+            </select>
+            <p>Select single</p>
+            <select name="select-single">
+                <option value="">Select</option>
+                <option value="volvo">Volvo</option>
+                <option value="saab">Saab</option>
+                <option value="mercedes">Mercedes</option>
+                <option value="audi">Audi</option>
+            </select>
+    
+            <div>
+                <button id="submit" type="submit">Submit</button>
+                <button id="load" type="submit">Load json</button>
+            </div>
+        </div>
+    </form>
+    <div id="results_wrapper"></div>
+    <script src="dist/get-set-form-values.js"></script>
+    <script>
+    
+        // Usage
+        var formValues = new getSetFormValues();
+    
+        // Some values to load
+        var loadJsonValues = {"radio": "d", "fulltext": "Area", "range": "9", "checkbox": ["B"], "input": "Text", "select": ["saab", "mercedes"], "select-single": "volvo"};
+    
+        (function () {
+    
+            var mainForm = document.getElementById('main_form');
+    
+            var submit = document.getElementById('submit');
+            submit.addEventListener('click', function (event) {
+                event.preventDefault();
+                var params = formValues.get(mainForm);
+                document.getElementById('results_wrapper').innerHTML = JSON.stringify(params, null, ' ');
+            }, false);
+    
+            var load = document.getElementById('load')
+            load.addEventListener('click', function (event) {
+                event.preventDefault();
+                formValues.set(mainForm, loadJsonValues);
+            }, false);
+        })();
+    </script>
+     
+  </body>
+</html>
+       </body>
+     </html>
+     

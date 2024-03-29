@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<html>
+  <head>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  </head>
+
+  <body>
+    <div id="form_a_942"></div>
+      <form id="form_a_942">
+          <p><h1>Administracion de carpetas Articulo 942</h1></p>
+            <div id="nombre_carpeta_div">
+              <label for="nombre_carpeta">Nombre del archivo</label>
+              <input type="text" id="nombre_carpeta" placeholder="Heber Romero" />           
+            </div>
+            </p>
+            <div id="tipo_cliente_div">
+              <label for="tipo_cliente">Tipo de cliente</label>
+              <select name="tipo_cliente" id="tipo_cliente" onchange="show_tipo_cliente(this.value)">
+                <option value="">--Please choose an option--</option>
+                <option value="persona_fisica_div">Persona Fisica</option>
+                <option value="persona_moral_div">Persona Moral</option>
+              </select>
+            </div>
+          </p>
+            <hr class="gradient">
+            <div id="persona_fisica_div" class="hidden"> 
+              <p><h2>Persona fisica</h2></p>
+              <div style="width: 40%; float:right">
+                <img src="images/emitir_fisica.jpg" alt="Description of the image" style="display: block; margin-left: auto; margin-right: auto;">
+              </div>
+              <div>
+                <form action="/api" method="post" enctype="multipart/form-data">
+                  <label for="ot">[ Documento OT   ]</label>
+                  <input id="ot" name="ot" type="file" />
+                  <button id="guardar_ot" type="guardar">Adjuntar</button>
+                </form>
+                </p>
+                <form action="/api" method="post" enctype="multipart/form-data">
+                  <label for="factura_origen">[ Factura Origen ]</label>
+                  <input id="factura_origen" name="factura_origen" type="file" />
+                  <button id="guardar_factura_origen" type="guardar">Adjuntar</button>
+                </form>
+                </p>
+                <form action="/api" method="post" enctype="multipart/form-data">
+                  <label for="cotizacion">[ Cotización .......]</label>
+                  <input id="cotizacion" name="cotizacion" type="file" />
+                  <button id="guardar_cotizacion" type="guardar">Adjuntar</button>
+                </form>
+                </p>
+                <form action="/api" method="post" enctype="multipart/form-data">
+                  <label for="ine">[ INE ...................]</label>
+                  <input id="ine" name="ine" type="file" />
+                  <button id="guardar_ine" type="guardar">Adjuntar</button>
+                </form>
+                </p>    
+                <form action="/api" method="post" enctype="multipart/form-data">
+                  <label for="comp_dom">[ Comp domicilio]</label>
+                  <input id="comp_dom" name="comp_dom" type="file" />
+                  <button id="guardar_comp_dom" type="guardar">Adjuntar</button>
+                </form>
+                </p>    
+                <form action="/api" method="post" enctype="multipart/form-data">
+                  <label for="foto1">[ Foto auto 1 .......]</label>
+                  <input id="foto1" name="foto1" type="file" />
+                  <button id="guardar_foto1" type="guardar">Adjuntar</button>
+                </form>
+                </p> 
+                <form action="/api" method="post" enctype="multipart/form-data">
+                  <label for="foto2">[ Foto auto 2 .......]</label>
+                  <input id="foto2" name="foto1" type="file" />
+                  <button id="guardar_foto2" type="guardar">Adjuntar</button>
+                </form>
+                </p> 
+                <form action="/api" method="post" enctype="multipart/form-data">
+                  <label for="foto3">[ Foto auto 3 .......]</label>
+                  <input id="foto3" name="foto3" type="file" />
+                  <button id="guardar_foto3" type="guardar">Adjuntar</button>
+                </form>
+                </p>
+                <form action="/api" method="post" enctype="multipart/form-data">
+                  <label for="foto4">[ Foto auto 4 .......]</label>
+                  <input id="foto4" name="foto4" type="file" />
+                  <button id="guardar_foto4" type="guardar">Adjuntar</button>
+                </form>
+              </div>           
+            </div>
+            <hr class="gradient">
+            <div id="persona_moral_div" class="hidden"> 
+              <p><h2>Persona moral</h2></p>
+              <div style="width: 40%; float:right">
+                <img src="images/emitir_moral.jpg" alt="Description of the image" style="display: block; margin-left: auto; margin-right: auto;">
+              </div>
+              <div>
+                <form action="/api" method="post" enctype="multipart/form-data">
+                  <label for="acta_consitutiva">[ Documento OT   ]</label>
+                  <input id="acta_consitutiva" name="acta_consitutiva" type="file" />
+                  <button id="guardar_acta_consitutiva" type="guardar">Adjuntar</button>
+                </form>
+                </p>
+                <form action="/api" method="post" enctype="multipart/form-data">
+                  <label for="situacion_fiscal">[ Factura Origen ]</label>
+                  <input id="situacion_fiscal" name="situacion_fiscal" type="file" />
+                  <button id="guardar_situacion_fiscal" type="guardar">Adjuntar</button>
+                </form>
+                </p>
+                <form action="/api" method="post" enctype="multipart/form-data">
+                  <label for="cotizacion">[ Cotización .......]</label>
+                  <input id="cotizacion" name="cotizacion" type="file" />
+                  <button id="guardar_cotizacion" type="guardar">Adjuntar</button>
+                </form>
+                </p>
+                <form action="/api" method="post" enctype="multipart/form-data">
+                  <label for="ine2">[ INE ...................]</label>
+                  <input id="ine2" name="ine2" type="file" />
+                  <button id="guardar_ine2" type="guardar">Adjuntar</button>
+                </form>
+                </p>    
+                <form action="/api" method="post" enctype="multipart/form-data">
+                  <label for="comp_dom2">[ Comp domicilio]</label>
+                  <input id="comp_dom2" name="comp_dom2" type="file" />
+                  <button id="guardar_comp_dom2" type="guardar">Adjuntar</button>
+                </form>
+                </p>    
+                <form action="/api" method="post" enctype="multipart/form-data">
+                  <label for="foto1">[ Foto auto 1 .......]</label>
+                  <input id="foto1" name="foto1" type="file" />
+                  <button id="guardar_foto1" type="guardar">Adjuntar</button>
+                </form>
+                </p> 
+                <form action="/api" method="post" enctype="multipart/form-data">
+                  <label for="folio_mercantil">[ Foto auto 2 .......]</label>
+                  <input id="folio_mercantil" name="folio_mercantil" type="file" />
+                  <button id="guardar_folio_mercantil" type="guardar">Adjuntar</button>
+                </form>
+                </p> 
+                <form action="/api" method="post" enctype="multipart/form-data">
+                  <label for="boleta_inscripcion">[ Foto auto 3 .......]</label>
+                  <input id="boleta_inscripcion" name="boleta_inscripcion" type="file" />
+                  <button id="guardar_boleta_inscripcion" type="guardar">Adjuntar</button>
+                </form>
+                </p>
+                <form action="/api" method="post" enctype="multipart/form-data">
+                  <label for="poder_notarial">[ Foto auto 4 .......]</label>
+                  <input id="poder_notarial" name="poder_notarial" type="file" />
+                  <button id="guardar_poder_notarial" type="guardar">Adjuntar</button>
+                </form>
+                </p>
+             </div>
+            </div>          
+            <div>
+                <button id="guardar" type="save" onClick="create_folder()">Guardar</button>
+            </div>
+      </form>
+    </div>
+    <script type="text/javascript">
+      
+      function show_tipo_cliente(tipoCliente) {
+        
+        if(tipoCliente == "persona_fisica_div"){
+          document.getElementById(tipoCliente).className = "visible";
+          document.getElementById("persona_moral_div").className = "hidden";
+        } else if (tipoCliente == "persona_moral_div"){
+          document.getElementById(tipoCliente).className = "visible";
+          document.getElementById("persona_fisica_div").className = "hidden";
+        } else {
+          document.getElementById("persona_moral_div").className = "hidden";
+          document.getElementById("persona_fisica_div").className = "hidden";
+        } 
+        
+      }
+
+      function create_folder() {
+      
+        var tc = document.getElementById("tipo_cliente").options[tipo_cliente.selectedIndex].text;
+
+        console.log(tc);
+        
+        if(tc == "Persona Fisica"){
+          var path = "./personas_fisicas/"
+        } else if (tc == "Persona Moral"){
+          var path = "./personas_morales/"
+        } else {
+          var path = "/tmp/"
+        }
+        var archive = document.getElementById("nombre_carpeta").value;
+        
+        console.log(archive);
+        console.log(path);
+        // var fs = require('node:fs');
+
+        document.getElementById('btnCrearDirectorio').addEventListener('click', function() {
+            fetch('/crearDirectorio')
+                .then(response => response.text())
+                .then(data => alert(data))
+                .catch(error => console.error(error));
+        });
+
+
+
+      }
+
+    </script>
+    <script src="scripts/create_folder.js"></script>
+  </body>
+</html>
+
+

@@ -1,0 +1,273 @@
+<html>
+  <head>
+    <!--
+      required viewer styles
+    -->
+    <style>
+      label {
+        color: #c346e2;
+        font-weight: bold;
+        display: block;
+      }
+      label:after { content: ": " }
+      input {
+        padding: 3px;
+        box-shadow: 3px 3px 5px #e04ea3;
+        font-size: 14px;
+        font-weight: 600;
+        width: 300px;
+      }
+      input::file-selector-button {
+      font-weight: bold;
+      color: #bf0fd6;
+      padding: 0.5em;
+      border: thin solid #db28d2;
+      border-radius: 3px;
+      }
+      .container {
+        position: relative;
+        width: 400px;
+        height: 300px;
+      }
+
+      .image {
+        background-image: url('images/qualitas.png');
+        background-size: cover;
+        width: 40%;
+        height: 40%;
+      }
+      img {
+        width: 45%;
+        height: 55%;
+      }
+      .paragraph {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        color: #ec5dc9;
+        padding: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(0, 0, 0, 0.5);
+      }
+      hr {
+        display: block;
+        margin-top: 0.5em;
+        margin-bottom: 0.5em;
+        margin-left: auto;
+        margin-right: auto;
+        border-style: inset;
+        border-width: 1px;
+      }
+      hr.gradient {
+        height: 3px;
+        border: none;
+        border-radius: 6px;
+        background: linear-gradient(
+          90deg,
+          rgb(135, 22, 201) 0%,
+          rgba(9, 9, 121, 1) 21%,
+          rgba(6, 84, 170, 1) 51%,
+          rgb(235, 11, 167) 100%
+        );
+      }
+      button {
+        padding: 10px;
+        border: 1px solid #cd4fec;
+        background-color:hsl(310, 78%, 66%);
+        border-radius: 5px;
+        font: inherit;
+      }
+      select {
+        padding: 3px;
+        box-shadow: 3px 3px 5px #e04ea3;
+        font-size: 14px;
+        font-weight: 600;
+        width: 300px;
+      }
+      
+    </style>
+
+    <title>Gestor de carpetas clientes</title>
+  </head>
+
+  <body>
+    <div id="form_a_942"></div>
+    <!--
+      add your form schema to this script tag
+      alternatively, load it asynchronously from anywhere
+    -->
+      <form id="form_a_942">
+        <div id="tipo_cliente">
+          <p><h1>Administracion de carpetas Articulo 942</h1></p>
+            <div id="nombre_carpeta">
+              <label for="nombre_carpeta">Nombre del archivo</label>
+              <input type="text" id="nombre_carpeta" placeholder="Heber Romero" />           
+            </div>
+          </p>
+          <div>
+            <label for="tipo_cliente">Tipo de cliente</label>
+            <select name="tipo_cliente" id="pet-select">
+              <option value="">--Please choose an option--</option>
+              <option value="persona_fisica">Persona Fisica</option>
+              <option value="persona_moral">Persona Moral</option>
+            </select>
+          </div>
+          </p>
+          <article class="persona_fisica">
+          <div id="persona_fisica"> 
+            <p><h2>Persona fisica</h2></p>
+            <div style="width: 40%; float:right">
+              <img src="images/emitir_fisica.jpg" alt="Description of the image" style="display: block; margin-left: auto; margin-right: auto;">
+            </div>
+            <div>
+              <form action="/api" method="post" enctype="multipart/form-data">
+                <label for="ot">[ Documento OT   ]</label>
+                <input id="ot" name="ot" type="file" />
+                <button id="guardar_ot" type="guardar">Adjuntar</button>
+              </form>
+              </p>
+              <form action="/api" method="post" enctype="multipart/form-data">
+                <label for="factura_origen">[ Factura Origen ]</label>
+                <input id="factura_origen" name="factura_origen" type="file" />
+                <button id="guardar_factura_origen" type="guardar">Adjuntar</button>
+              </form>
+              </p>
+              <form action="/api" method="post" enctype="multipart/form-data">
+                <label for="cotizacion">[ Cotización .......]</label>
+                <input id="cotizacion" name="cotizacion" type="file" />
+                <button id="guardar_cotizacion" type="guardar">Adjuntar</button>
+              </form>
+              </p>
+              <form action="/api" method="post" enctype="multipart/form-data">
+                <label for="ine">[ INE ...................]</label>
+                <input id="ine" name="ine" type="file" />
+                <button id="guardar_ine" type="guardar">Adjuntar</button>
+              </form>
+              </p>    
+              <form action="/api" method="post" enctype="multipart/form-data">
+                <label for="comp_dom">[ Comp domicilio]</label>
+                <input id="comp_dom" name="comp_dom" type="file" />
+                <button id="guardar_comp_dom" type="guardar">Adjuntar</button>
+              </form>
+              </p>    
+              <form action="/api" method="post" enctype="multipart/form-data">
+                <label for="foto1">[ Foto auto 1 .......]</label>
+                <input id="foto1" name="foto1" type="file" />
+                <button id="guardar_foto1" type="guardar">Adjuntar</button>
+              </form>
+              </p> 
+              <form action="/api" method="post" enctype="multipart/form-data">
+                <label for="foto2">[ Foto auto 2 .......]</label>
+                <input id="foto2" name="foto1" type="file" />
+                <button id="guardar_foto2" type="guardar">Adjuntar</button>
+              </form>
+              </p> 
+              <form action="/api" method="post" enctype="multipart/form-data">
+                <label for="foto3">[ Foto auto 3 .......]</label>
+                <input id="foto3" name="foto3" type="file" />
+                <button id="guardar_foto3" type="guardar">Adjuntar</button>
+              </form>
+              </p>
+              <form action="/api" method="post" enctype="multipart/form-data">
+                <label for="foto4">[ Foto auto 4 .......]</label>
+                <input id="foto4" name="foto4" type="file" />
+                <button id="guardar_foto4" type="guardar">Adjuntar</button>
+              </form>
+              </p>
+            </div>           
+          </div>
+        </article>
+        <hr class="gradient">
+          <div id="persona_moral"> 
+            <p><h2>Persona moral</h2></p>
+            <div style="width: 40%; float:right">
+              <img src="images/emitir_moral.jpg" alt="Description of the image" style="display: block; margin-left: auto; margin-right: auto;">
+            </div>
+            <div>
+              <form action="/api" method="post" enctype="multipart/form-data">
+                <label for="ot">[ Documento OT   ]</label>
+                <input id="ot" name="ot" type="file" />
+                <button id="guardar_ot" type="guardar">Adjuntar</button>
+              </form>
+              </p>
+              <form action="/api" method="post" enctype="multipart/form-data">
+                <label for="factura_origen">[ Factura Origen ]</label>
+                <input id="factura_origen" name="factura_origen" type="file" />
+                <button id="guardar_factura_origen" type="guardar">Adjuntar</button>
+              </form>
+              </p>
+              <form action="/api" method="post" enctype="multipart/form-data">
+                <label for="cotizacion">[ Cotización .......]</label>
+                <input id="cotizacion" name="cotizacion" type="file" />
+                <button id="guardar_cotizacion" type="guardar">Adjuntar</button>
+              </form>
+              </p>
+              <form action="/api" method="post" enctype="multipart/form-data">
+                <label for="ine">[ INE ...................]</label>
+                <input id="ine" name="ine" type="file" />
+                <button id="guardar_ine" type="guardar">Adjuntar</button>
+              </form>
+              </p>    
+              <form action="/api" method="post" enctype="multipart/form-data">
+                <label for="comp_dom">[ Comp domicilio]</label>
+                <input id="comp_dom" name="comp_dom" type="file" />
+                <button id="guardar_comp_dom" type="guardar">Adjuntar</button>
+              </form>
+              </p>    
+              <form action="/api" method="post" enctype="multipart/form-data">
+                <label for="foto1">[ Foto auto 1 .......]</label>
+                <input id="foto1" name="foto1" type="file" />
+                <button id="guardar_foto1" type="guardar">Adjuntar</button>
+              </form>
+              </p> 
+              <form action="/api" method="post" enctype="multipart/form-data">
+                <label for="foto2">[ Foto auto 2 .......]</label>
+                <input id="foto2" name="foto1" type="file" />
+                <button id="guardar_foto2" type="guardar">Adjuntar</button>
+              </form>
+              </p> 
+              <form action="/api" method="post" enctype="multipart/form-data">
+                <label for="foto3">[ Foto auto 3 .......]</label>
+                <input id="foto3" name="foto3" type="file" />
+                <button id="guardar_foto3" type="guardar">Adjuntar</button>
+              </form>
+              </p>
+              <form action="/api" method="post" enctype="multipart/form-data">
+                <label for="foto4">[ Foto auto 4 .......]</label>
+                <input id="foto4" name="foto4" type="file" />
+                <button id="guardar_foto4" type="guardar">Adjuntar</button>
+              </form>
+              </p>
+            </div>           
+          </div>
+
+            <div>
+                <button id="guardar" type="guardar" onClick="create_folder()">Guardar</button>
+            </div>
+        </div>
+    </form>
+    
+    <div id="results_wrapper"></div>
+    
+    <script>
+      
+      function create_folder(nombre_carpeta) {
+        const fs = require('fs');
+        const path = require('//home/psehgaft/Workspace/Articulo-492-form//');
+        fs.mkdir(path.join(__dirname, 'test'),
+        (err) => {
+            if (err) {
+                return console.error(err);
+            }
+            console.log('Directory created successfully!');
+        });
+      }
+    </script>
+     
+  </body>
+</html>
